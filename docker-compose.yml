@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  minio-import:
+    container_name: minio
+    build:
+      context: ./storage
+      dockerfile: Dockerfile
+    ports:
+      - '9000:9000'
+      - '9090:9090'
+    env_file:
+      - .env
